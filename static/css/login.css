@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1A4350;
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Add padding to prevent content from touching edges */
+}
+
+.container {
+    width: 100%;
+    max-width: 500px; /* Set max-width for larger screens */
+    max-height: 500px;
+    padding: 20px;
+    background: linear-gradient(145deg, #2A6A80, #1A4350);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background: #ffffff;
+    color: #333;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #999;
+}
+
+button[type="submit"] {
+    background-color: #1A4350;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #3b6a7b;
+}
+
+.invalid-feedback {
+    color: #ffcccc;
+    font-size: 12px;
+    text-align: left;
+    margin-top: -10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    button[type="submit"] {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .invalid-feedback {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    form {
+        gap: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    button[type="submit"] {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .invalid-feedback {
+        font-size: 10px;
+    }
+}
+
+/* Existing styles here */
+
+.signup-link {
+    margin-top: 15px; /* Space above the link section */
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.signup-link a {
+    color: #f0f0f0; /* Link color */
+    text-decoration: none;
+    font-weight: 600; /* Slightly bolder link */
+}
+
+.signup-link a:hover {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+/* Responsive adjustments (if needed) */
+@media (max-width: 768px) {
+    .signup-link {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-link {
+        font-size: 12px;
+    }
+}
