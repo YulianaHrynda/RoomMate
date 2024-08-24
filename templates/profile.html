@@ -11,14 +11,13 @@
 <body>
     <div class="profile-container">
         <header class="profile-header">
-            <a href="{% url 'home' %}" class="home-icon">
-                <img src="{% static 'images/home-icon.png' %}" alt="Home">
-            </a>
             <form action="{% url 'logout' %}" method="post" id="logout-form">
                 {% csrf_token %}
                 <button type="submit" class="logout-button">Logout</button>
             </form>
-
+            <a href="{% url 'home' %}" class="home-icon">
+                <img src="{% static 'images/home-icon.png' %}" alt="Home">
+            </a>
         </header>
     
         <div class="profile-main">
