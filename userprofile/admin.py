@@ -1,10 +1,12 @@
 from django.contrib import admin
-
-# Register your models here.
-from django.contrib import admin
 from .models import Profile
 
-@admin.register(Profile)
-class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'bio', 'rooms')
-    search_fields = ('user__username', 'bio', 'rooms')
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'bio', 'list_rooms')  # Replace 'rooms' with 'list_rooms'
+
+    def list_rooms(self, obj):
+        return ", ".join([room.name for room in obj.rooms.all()])
+
+    list_rooms.short_description = 'Rooms'
+
+admin.site.register(Profile, UserProfileAdmin)

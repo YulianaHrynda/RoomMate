@@ -40,7 +40,7 @@ body {
 .photo-circle {
     width: 100px;
     height: 100px;
-    background-color: #174d53;
+    background-color: #1A4350;
     color: white;
     display: flex;
     justify-content: center;
@@ -87,7 +87,7 @@ h2 {
 }
 
 .add-room-button, .edit-button {
-    background-color: #174d53;
+    background-color: #1A4350;
     color: white;
     padding: 10px 20px;
     font-size: 16px;

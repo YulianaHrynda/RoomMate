@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create the room</title>
+    <link rel="stylesheet" href="{% static 'css/create_room.css' %}">
+</head>
+<body>
+    <div class="create-room-container">
+        <h2>Create the room</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="{{ form.name.id_for_label }}">Name of the room</label>
+                {{ form.name }}
+            </div>
+            <div class="input-group">
+                <label for="{{ form.number_of_people.id_for_label }}">Number of people</label>
+                {{ form.number_of_people }}
+            </div>
+            <button type="submit">Create Room</button>
+        </form>
+    </div>
+</body>
+</html>
