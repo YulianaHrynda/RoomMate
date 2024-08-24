@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <header class="profile-header">
+            <a href="{% url 'home' %}" class="home-icon">
+                <img src="{% static 'images/home-icon.png' %}" alt="Home">
+            </a>
+        </header>
+    
+        <div class="profile-main">
+            <div class="profile-photo">
+                <div class="photo-circle">photo</div>
+                <h2>{{ user.username }}</h2>
+            </div>
+    
+            <div class="profile-details">
+                <div class="rooms-section">
+                    <h3>My rooms:</h3>
+                    <ul>
+                        {% for room in user.profile.rooms.all %}
+                        <li>{{ room }}</li>
+                        {% endfor %}
+                    </ul>
+                    <form action="" method="get">
+                        <button type="submit" class="add-room-button">Add room</button>
+                    </form>                    
+                </div>
+    
+                <div class="info-section">
+                    <h3>Info about me</h3>
+                    <ul>
+                        <!-- <li>{{ user.profile.phone }}</li> -->
+                        <li>Email: {{ user.email }}</li>
+                        <li>Bio: {{ user.profile.bio }}</li>
+                    </ul>
+                    <button class="edit-button">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
