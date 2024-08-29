@@ -34,7 +34,7 @@
                         <li>{{ room }}</li>
                         {% endfor %}
                     </ul>
-                    <form action="" method="get">
+                    <form action="{% url 'enter_room' %}" method="get">
                         <button type="submit" class="add-room-button">Add room</button>
                     </form>                    
                 </div>

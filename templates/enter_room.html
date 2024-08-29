@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Room</title>
+    <link rel="stylesheet" href="{% static 'css/enter_room.css' %}">
+</head>
+<body>
+    <div class="enter-room-container">
+        <h2>Enter your room</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                {{ form.room_id }}
+            </div>
+            <button type="submit">Enter Room</button>
+        </form>
+        <p>Don't have a room? <a href="{% url 'create_room' %}" class="create-room-link">Create a room</a></p>
+    </div>
+</body>
+</html>
